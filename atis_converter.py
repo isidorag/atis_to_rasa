@@ -110,7 +110,7 @@ with open("\ICE-ATIS\ice_atis.train.w-intent.iob","r",encoding="utf8") as file:
         l2=l1[i+1:]
         l1=l1[0:i+1]
         intents[l2[-1]].append(transform_l(l1,l2))
-print(intents)
+#print(intents)
 with open("nlu.yml","w",encoding="utf8") as wfile:
     wfile.write('version: "2.0"\n\nnlu:\n')
     for k,v in intents.items():
