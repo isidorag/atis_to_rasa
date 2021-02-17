@@ -99,7 +99,7 @@ def transform_l(l1, l2):
             i=l2.index(s)
             l1[i]='[{}]'.format(l1[i])
             l1[i]=l1[i] + labels.get(s)
-    s = '\t\t- ' + ' '.join(l1[1:-1])
+    s = '    - ' + ' '.join(l1[1:-1])
     return(s)
 
 intents = defaultdict(list)
@@ -114,7 +114,7 @@ with open("\ICE-ATIS\ice_atis.train.w-intent.iob","r",encoding="utf8") as file:
 with open("nlu.yml","w",encoding="utf8") as wfile:
     wfile.write('version: "2.0"\n\nnlu:\n')
     for k,v in intents.items():
-        s='- intent: ' + k + '\n\texamples: |\n'
+        s='- intent: ' + k + '\n  examples: |\n'
         wfile.write(s)
         for s in v:
             wfile.write(s)
