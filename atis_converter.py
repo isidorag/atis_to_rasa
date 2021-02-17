@@ -97,6 +97,7 @@ def transform_l(l1, l2):
     for s in l2:
         if s in labels:
             i=l2.index(s)
+            l2[i]= '0'
             l1[i]='[{}]'.format(l1[i])
             l1[i]=l1[i] + labels.get(s)
     s = '    - ' + ' '.join(l1[1:-1])
